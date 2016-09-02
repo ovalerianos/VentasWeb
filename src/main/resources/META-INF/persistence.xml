@@ -1,0 +1,26 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="store-sqlite-jpa">
+
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+        <class>mx.com.planck.mx.com.planck.pojos.Person</class>
+
+        <properties>
+
+            <property name="hibernate.dialect" value="mx.com.planck.util.SQLiteDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="false"/>
+
+            <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:thedevside.db"/>
+
+            <property name="javax.persistence.validation.mode" value="none"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>
